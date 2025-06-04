@@ -1,0 +1,62 @@
+[DISCOVER_MASTER] Peer enviou:
+{
+  "action": "DISCOVER_MASTER",
+  "peer_id": "peer-1234",
+  "port_tcp": 5001
+}
+
+[MASTER_ANNOUNCE] Master respondeu:
+{
+  "action": "MASTER_ANNOUNCE",
+  "master_ip": "192.168.0.10",
+  "master_port": 9000
+}
+
+[REGISTER] Peer se registrou:
+{
+  "action": "REGISTER",
+  "peer_id": "peer-1234",
+  "addr": ["192.168.0.5", 5001]
+}
+
+[REGISTERED] Master confirmou:
+{
+  "status": "REGISTERED"
+}
+
+[HEARTBEAT] Enviado:
+{
+  "action": "HEARTBEAT",
+  "peer_id": "peer-1234"
+}
+
+[ALIVE] Master respondeu:
+{
+  "status": "ALIVE"
+}
+
+[REQUEST_TASK] Peer requisitou tarefa:
+{
+  "action": "REQUEST_TASK",
+  "peer_id": "peer-1234"
+}
+
+[TASK_PACKAGE] Master enviou tarefa:
+{
+  "action": "TASK_PACKAGE",
+  "task_name": "exemplo.zip",
+  "task_data": "<base64...>"
+}
+
+[SUBMIT_RESULT] Peer enviou resultado:
+{
+  "action": "SUBMIT_RESULT",
+  "peer_id": "peer-1234",
+  "result_name": "exemplo.zip",
+  "result_data": "<base64...>"
+}
+
+[OK] Master respondeu:
+{
+  "status": "OK"
+}
