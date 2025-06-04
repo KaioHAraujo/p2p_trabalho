@@ -1,0 +1,7 @@
+uuid
+socket
+threading
+json
+base64
+os
+subprocess
