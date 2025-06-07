@@ -31,8 +31,8 @@ def discover_master():
         data, addr = sock.recvfrom(4096)
         response = json.loads(data.decode())
         if response.get("action") == "MASTER_ANNOUNCE":
-            master_ip = response["master_ip"]
-            master_port = response["master_port"]
+            master_ip = "10.62.219.217"
+            master_port = "9000"
             print(f"[DISCOVERY] Master encontrado em {master_ip}:{master_port}")
     except socket.timeout:
         print("[DISCOVERY] Timeout procurando Master")
@@ -50,8 +50,8 @@ def register():
     addr = [socket.gethostbyname(socket.gethostname()), 0]
     msg = {
         "action": "REGISTER",
-        "peer_id": peer_id,
-        "addr": addr
+        "peer_id": "10.62.219.217",
+        "addr": "9000"
     }
     res = tcp_send(msg)
     print(f"[REGISTER] Resposta: {res}")
