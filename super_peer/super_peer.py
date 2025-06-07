@@ -17,7 +17,7 @@ def udp_discovery():
     udp_sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     udp_sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     udp_sock.bind(("", PORT_DISCOVERY))
-    print(f"[UDP] Escutando DISCOVER_MASTER na porta {PORT_DISCOVERY}")
+    print(f"[UDP] Escutando DISCOVER_MASTER na porta {udp_sock}")
 
     while True:
         data, addr = udp_sock.recvfrom(4096)
@@ -43,6 +43,7 @@ def handle_peer(conn, addr):
 
         elif action == "HEARTBEAT":
             conn.send(json.dumps({"status": "ALIVE"}).encode())
+            print(f"Node: {conn}")
 
         elif action == "REQUEST_TASK":
             task_files = os.listdir(TASKS_DIR)
