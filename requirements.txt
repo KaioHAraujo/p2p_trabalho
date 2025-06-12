@@ -1,0 +1,5 @@
+# Requisitos para execução do projeto
+# A maioria das bibliotecas utilizadas são da biblioteca padrão do Python
+
+# Caso deseje utilizar prints coloridos:
+colorama
